@@ -10,10 +10,13 @@ const stripe = Stripe('sk_test_51QJt9FFadvgEyax9NC8HZokdE6hh7fMJRaverOKM5BlujEsw
 const app = express();
 const port = 3010; // You can change the port if needed
 
+app.options('*', cors());  // Enable preflight for all routes
+
 app.use(cors({
-  origin: "https://part1-kappa.vercel.app/"
-  // origin: "http://localhost:5173"
-})); 
+  origin: ["https://part1-kappa.vercel.app", "http://localhost:5173"], // Add your frontend URL here
+  methods: ['GET', 'POST', 'OPTIONS'],  // Allow specific HTTP methods
+}));
+ 
 // Allow all origins (or restrict it to specific ones)
 // Middleware to parse JSON bodies
 app.use(express.json());
