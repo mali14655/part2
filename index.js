@@ -21,6 +21,10 @@ app.use(cors({
 // Middleware to parse JSON bodies
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('Hello from your Vercel deployment!');
+});
+
 app.post('/create-payment-intent', async (req, res) => {
   const { amount } = req.body; 
 
