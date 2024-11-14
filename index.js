@@ -13,7 +13,7 @@ const port = 3010; // You can change the port if needed
 app.options('*', cors());  // Enable preflight for all routes
 
 app.use(cors({
-  origin: ["https://part1-kappa.vercel.app", "http://localhost:5173"], // Add your frontend URL here
+  origin: ["https://part1-kappa.vercel.app", "http://localhost:5174"], // Add your frontend URL here
   methods: ['GET', 'POST', 'OPTIONS'],  // Allow specific HTTP methods
 }));
  
